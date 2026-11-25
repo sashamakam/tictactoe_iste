@@ -1,16 +1,22 @@
-# React + Vite
+# ISTE Tic-Tac-Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A browser-based, single-player tic-tac-toe game built with React, Vite, React Router, and Tailwind CSS. The project was used at ISTE Manipal's TechTatva event at MIT Manipal.
 
-Currently, two official plugins are available:
+## Play locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 22.12+ and npm.
 
-## React Compiler
+```sh
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open the local URL printed by Vite. Enter a display name, then play as X against the computer. The bot chooses an available square at random. The browser keeps the display name and match statistics in local storage.
 
-## Expanding the Oxlint configuration
+## Project layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- [src/pages](src/pages) contains the home, game, and results screens.
+- [src/lib/gameLogic.js](src/lib/gameLogic.js) contains board evaluation and bot move selection.
+- [src/lib/useStats.js](src/lib/useStats.js) handles persistent match statistics.
+
+Run `npm run build` to create a production bundle in `dist/`. The `npm run preview` command serves that bundle locally. For static hosting, configure the host to serve `index.html` for client-side routes.
